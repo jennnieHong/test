@@ -1,0 +1,44 @@
+.app{display:flex;height:100vh;font-family:sans-serif}
+.leftmenu{width:240px;background:#f7f7f7;padding:12px;overflow:auto}
+.main{flex:1;display:flex;flex-direction:column}
+.top-tabs{display:flex;gap:8px;padding:8px;background:#eee}
+.tab{background:#fff;padding:6px;border-radius:4px;display:flex;align-items:center;gap:8px}
+.content{padding:24px}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center}
+.popup{background:#fff;padding:20px;border-radius:8px;min-width:280px}
+.menu-item{cursor:pointer;padding:4px}
+.menu-item:hover{background:#e6f2ff}
+
+/* Login styles */
+.login-wrapper{display:flex;align-items:center;justify-content:center;height:100vh;background:linear-gradient(135deg,#5ee7df 0%,#5073ff 100%)}
+.login-card{background:#fff;width:520px;padding:48px;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,0.15);text-align:center}
+.logo{font-size:34px;color:#1e73be;font-weight:700;margin-bottom:18px}
+.login-form{display:flex;flex-direction:column;gap:12px}
+.login-form input{padding:14px;border:1px solid #eee;border-radius:4px;font-size:16px}
+.login-form .remember{display:flex;align-items:center;gap:8px;color:#888;font-size:14px}
+.login-btn{background:#1565c0;color:#fff;padding:12px;border-radius:6px;border:none;font-size:18px;margin-top:6px}
+
+/* Left menu collapsed */
+.leftmenu{width:240px;background:#222;color:#fff;padding:12px;overflow:auto;transition:width .22s ease}
+.leftmenu.collapsed{width:56px}
+.leftmenu .leftmenu-header{display:flex;align-items:center;justify-content:space-between}
+.leftmenu h4{margin:0;color:#fff}
+.collapse-btn{background:transparent;border:1px solid rgba(255,255,255,0.08);color:#fff;padding:6px;border-radius:6px}
+.leftmenu .menu-tree{margin-top:12px}
+.leftmenu .menu-item{color:#ddd;padding:8px;border-radius:6px}
+
+/* Dashboard layout */
+.dashboard{display:flex;gap:18px}
+.dash-left{flex:1}
+.dash-right{width:420px;display:flex;flex-direction:column;gap:12px}
+.donut{width:220px;height:220px;border-radius:50%;background:conic-gradient(#8ec7ff 0deg, #e6f0fb 0deg);display:flex;align-items:center;justify-content:center;margin:18px auto}
+.donut-inner{width:140px;height:140px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:36px}
+.chart-placeholder{height:120px;background:#f4f7fb;border-radius:8px;margin-bottom:8px;display:flex;align-items:center;justify-content:center;color:#8aa}
+.panel{background:#fff;border-radius:6px;padding:12px;min-height:140px;display:flex;align-items:center;justify-content:center;color:#777}
+
+/* Mobile styles */
+@media(max-width:768px){
+	.app{flex-direction:column}
+	.leftmenu{display:none}
+	.login-card{width:90%;border-radius:8px}
+}
