@@ -5,9 +5,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.core.userdetails.User;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
@@ -19,10 +18,14 @@ import java.util.Arrays;
 public class SecurityConfig {
 
     @Bean
-    public InMemoryUserDetailsManager userDetailsService() {
-        UserDetails user = User.withUsername("user").password("password").roles("USER").build();
-        UserDetails admin = User.withUsername("admin").password("admin").roles("USER","ADMIN").build();
-        return new InMemoryUserDetailsManager(user, admin);
+    public UserDetailsService userDetailsService(UserRepository repo) {
+        return username -> {
+            var opt = repo.findByUsername(username);
+            if(opt.isEmpty()) throw new org.springframework.security.core.userdetails.UsernameNotFoundException("no user");
+            var u = opt.get();
+            String[] roles = u.getRoles()!=null ? u.getRoles().split(",") : new String[]{"USER"};
+            return User.withUsername(u.getUsername()).password(u.getPassword()).roles(roles).build();
+        };
     }
 
     @Bean
@@ -31,7 +34,13 @@ public class SecurityConfig {
             .cors(c -> c.configurationSource(corsConfigurationSource()))
             .csrf().disable()
             .authorizeHttpRequests(auth -> auth
+                // allow anonymous GET for menu list and individual menu nodes
+                .requestMatchers(HttpMethod.GET, "/api/menus/**").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/menus").permitAll()
+                // allow anonymous signup
+                .requestMatchers(HttpMethod.POST, "/api/auth/**").permitAll()
+                // allow dev seed endpoint without auth (convenience for local dev)
+                .requestMatchers(HttpMethod.POST, "/api/admin/seed").permitAll()
                 .requestMatchers("/api/**").authenticated()
                 .anyRequest().permitAll()
             )
@@ -42,7 +51,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:5173", "http://localhost:3000", "http://localhost:5174"));
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:5173", "http://localhost:3000", "http://localhost:5174", "http://localhost:5175"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
         configuration.setAllowCredentials(true);
@@ -54,6 +63,6 @@ public class SecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
+        return new BCryptPasswordEncoder();
     }
 }
