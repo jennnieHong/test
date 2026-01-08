@@ -187,9 +187,9 @@ export default function MobileApp({nickname, userInfo: parentUserInfo}){
   }
 
   return (
-      <div className="mobile-app">
+      <div className="mobile-app" style={{height:'100dvh', display:'flex', flexDirection:'column', overflow:'hidden'}}>
         <header className="mobile-header" style={{
-            height:50, background:'#1565c0', display:'flex', alignItems:'center', justifyContent:'space-between', padding:'0 15px', color:'white'
+            height:50, minHeight:50, background:'#1565c0', display:'flex', alignItems:'center', justifyContent:'space-between', padding:'0 15px', color:'white'
         }}>
             <div style={{display:'flex', alignItems:'center'}}>
                 <button onClick={()=>setMenuOpen(!menuOpen)} style={{background:'none', border:'none', color:'white', fontSize:20, marginRight:10}}>
@@ -217,7 +217,7 @@ export default function MobileApp({nickname, userInfo: parentUserInfo}){
 
         {menuOpen && <MobileMenu onNavigate={(id)=>handleNavigate(id)} onClose={()=>setMenuOpen(false)} activeView={currentViewId} nickname={nickname} userInfo={userInfo} />}
 
-        <div className="mobile-content" style={{height:'calc(100vh - 50px)', overflow:'auto'}}>
+        <div className="mobile-content" style={{flex:1, overflow:'auto'}}>
             {screens[currentViewId]}
         </div>
 
