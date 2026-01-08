@@ -60,14 +60,69 @@ function MobileSample({onNavigate, onPopup, popupResult}){
     )
 }
 
-function MobileMenu({onNavigate, onClose, activeView, nickname, userInfo}){
-    const items = [
-        {id:'dashboard', label:'대시보드'},
-        {id:'stock', label:'재고 현황'},
-        {id:'production', label:'생산 관리'},
-        {id:'orders', label:'주문 목록'},
-        {id:'sample', label:'샘플 & 테스트'},
-    ]
+function MobileTreeNode({node, onNavigate, onClose, activeView, depth = 0}){
+    const [expanded, setExpanded] = useState(false)
+    const hasChildren = node.children && node.children.length > 0
+    const isActive = activeView === String(node.id)
+
+    return (
+        <div className="mobile-menu-node">
+            <div 
+                className={`mobile-menu-item ${isActive ? 'active' : ''}`}
+                onClick={() => {
+                    if(hasChildren) setExpanded(!expanded)
+                    else {
+                        onNavigate(String(node.id))
+                        onClose()
+                    }
+                }}
+                style={{
+                    padding: '12px 16px',
+                    paddingLeft: 16 + (depth * 16),
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    background: isActive ? '#f1f5f9' : 'none',
+                    borderRadius: 8,
+                    marginBottom: 4,
+                    cursor: 'pointer'
+                }}
+            >
+                <div style={{display:'flex', alignItems:'center', gap: 8}}>
+                    {!hasChildren && <span style={{fontSize: 10, opacity: 0.5}}>•</span>}
+                    <span style={{
+                        fontSize: 15,
+                        color: isActive ? '#1565c0' : '#334155',
+                        fontWeight: isActive ? '600' : '500'
+                    }}>
+                        {node.name}
+                    </span>
+                </div>
+                {hasChildren && (
+                    <span style={{ fontSize: 12, color: '#94a3b8', transform: expanded ? 'rotate(90deg)' : 'none', transition: 'transform 0.2s' }}>
+                        ▶
+                    </span>
+                )}
+            </div>
+            {hasChildren && expanded && (
+                <div className="mobile-menu-children" style={{ borderLeft: '1px solid #f1f5f9', marginLeft: 22 }}>
+                    {node.children.map(child => (
+                        <MobileTreeNode 
+                            key={child.id} 
+                            node={child} 
+                            onNavigate={onNavigate} 
+                            onClose={onClose} 
+                            activeView={activeView} 
+                            depth={depth + 1} 
+                        />
+                    ))}
+                </div>
+            )}
+        </div>
+    )
+}
+
+function MobileMenu({menus, onNavigate, onClose, activeView, nickname, userInfo}){
     return (
         <div className="mobile-menu-overlay" onClick={onClose} style={{
             position:'fixed', top:0, left:0, width:'100%', height:'100dvh', 
@@ -75,7 +130,7 @@ function MobileMenu({onNavigate, onClose, activeView, nickname, userInfo}){
             backdropFilter: 'blur(4px)', WebkitBackdropFilter: 'blur(4px)'
         }}>
             <div className="mobile-menu-sidebar" onClick={e=>e.stopPropagation()} style={{
-                width:'75%', height:'100%', background:'white', padding:'20px', display:'flex', flexDirection:'column',
+                width:'80%', height:'100%', background:'white', padding:'20px', display:'flex', flexDirection:'column',
                 boxShadow:'2px 0 12px rgba(0,0,0,0.15)', animation: 'slideIn 0.3s ease-out'
             }}>
                 <style>{`
@@ -88,31 +143,24 @@ function MobileMenu({onNavigate, onClose, activeView, nickname, userInfo}){
                     </div>
                     <button onClick={onClose} style={{background:'none', border:'none', fontSize:24, color:'#334155', padding:0, lineHeight:1}}>✕</button>
                 </div>
-                <h4 style={{marginBottom:15, color:'#1e293b', fontSize:14, textTransform:'uppercase', letterSpacing:'0.5px'}}>메뉴</h4>
-                <ul style={{listStyle:'none', padding:0, flex:1, overflowY:'auto'}}>
-                    {items.map(item=>(
-                        <li key={item.id} style={{marginBottom:8}}>
-                            <button 
-                                onClick={()=>{onNavigate(item.id); onClose()}}
-                                style={{
-                                    border:'none', background: activeView===item.id ? '#f1f5f9' : 'none', 
-                                    fontSize:16, width:'100%', textAlign:'left', padding:'10px 12px', borderRadius:8,
-                                    color: activeView===item.id ? '#1565c0':'#334155',
-                                    fontWeight: activeView===item.id ? '600':'500',
-                                    transition: 'all 0.2s'
-                                }}
-                            >
-                                {item.label}
-                            </button>
-                        </li>
+                <h4 style={{marginBottom:15, color:'#1e293b', fontSize:14, textTransform:'uppercase', letterSpacing:'0.5px'}}>시스템 메뉴</h4>
+                <div style={{flex:1, overflowY:'auto'}}>
+                    {menus && menus.map(node => (
+                        <MobileTreeNode 
+                            key={node.id} 
+                            node={node} 
+                            onNavigate={onNavigate} 
+                            onClose={onClose} 
+                            activeView={activeView} 
+                        />
                     ))}
-                </ul>
+                </div>
             </div>
         </div>
     )
 }
 
-export default function MobileApp({nickname, userInfo: parentUserInfo}){
+export default function MobileApp({nickname, userInfo: parentUserInfo, menus}){
   const [logged, setLogged] = useState(!!(localStorage.getItem('token')))
   const [userInfo, setUserInfo] = useState(parentUserInfo || JSON.parse(localStorage.getItem('userInfo') || 'null'))
   const [menuOpen, setMenuOpen] = useState(false)
@@ -215,7 +263,7 @@ export default function MobileApp({nickname, userInfo: parentUserInfo}){
             </button>
         </header>
 
-        {menuOpen && <MobileMenu onNavigate={(id)=>handleNavigate(id)} onClose={()=>setMenuOpen(false)} activeView={currentViewId} nickname={nickname} userInfo={userInfo} />}
+        {menuOpen && <MobileMenu menus={menus} onNavigate={(id)=>handleNavigate(id)} onClose={()=>setMenuOpen(false)} activeView={currentViewId} nickname={nickname} userInfo={userInfo} />}
 
         <div className="mobile-content" style={{flex:1, overflow:'auto'}}>
             {screens[currentViewId]}

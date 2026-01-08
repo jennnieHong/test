@@ -97,7 +97,7 @@ export default function App({isMobile}){
 
   const [tabletMenuOpen, setTabletMenuOpen] = useState(false)
 
-  if(isMobile) return <MobileApp nickname={nickname} userInfo={userInfo} />
+  if(isMobile) return <MobileApp nickname={nickname} userInfo={userInfo} menus={menus} />
 
   return (
     <div className="app">
