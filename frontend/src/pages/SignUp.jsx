@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import api from '../api'
 
 export default function SignUp(){
-  const [form, setForm] = useState({username:'',password:'',email:''})
+  const [form, setForm] = useState({username:'',password:'',email:'', nickname:''})
   const [msg, setMsg] = useState(null)
 
   function change(e){ setForm({...form, [e.target.name]: e.target.value}) }
@@ -25,6 +25,7 @@ export default function SignUp(){
       <h2>회원가입</h2>
       <form onSubmit={submit} className="signup-form">
         <input name="username" placeholder="아이디" value={form.username} onChange={change} />
+        <input name="nickname" placeholder="닉네임" value={form.nickname} onChange={change} />
         <input name="email" placeholder="이메일" value={form.email} onChange={change} />
         <input name="password" placeholder="비밀번호" type="password" value={form.password} onChange={change} />
         <button>회원가입</button>

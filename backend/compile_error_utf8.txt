@@ -1,0 +1,661 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.example:menu-backend >----------------------
+[INFO] Building menu-backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ menu-backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ menu-backend ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 17 source files with javac [debug release 11] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/MenuController.java:[12,2] cannot access org.springframework.web.bind.annotation.CrossOrigin
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/bind/annotation/CrossOrigin.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/MenuController.java:[13,2] cannot access org.springframework.web.bind.annotation.RestController
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/bind/annotation/RestController.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/MenuController.java:[14,2] cannot access org.springframework.web.bind.annotation.RequestMapping
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/bind/annotation/RequestMapping.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/service/MenuService.java:[6,38] cannot access org.springframework.stereotype.Service
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-context\6.0.13\spring-context-6.0.13.jar(/org/springframework/stereotype/Service.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/service/MenuService.java:[12,2] cannot find symbol
+  symbol: class Service
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/repository/MenuRepository.java:[3,47] cannot access org.springframework.data.jpa.repository.JpaRepository
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\data\spring-data-jpa\3.1.5\spring-data-jpa-3.1.5.jar(/org/springframework/data/jpa/repository/JpaRepository.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/repository/MenuRepository.java:[9,41] cannot find symbol
+  symbol: class JpaRepository
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[3,46] cannot access org.springframework.context.annotation.Bean
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-context\6.0.13\spring-context-6.0.13.jar(/org/springframework/context/annotation/Bean.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[4,46] cannot access org.springframework.context.annotation.Configuration
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-context\6.0.13\spring-context-6.0.13.jar(/org/springframework/context/annotation/Configuration.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[5,67] cannot access org.springframework.security.config.annotation.web.builders.HttpSecurity
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-config\6.1.5\spring-security-config-6.1.5.jar(/org/springframework/security/config/annotation/web/builders/HttpSecurity.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[6,40] cannot access org.springframework.security.web.SecurityFilterChain
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-web\6.1.5\spring-security-web-6.1.5.jar(/org/springframework/security/web/SecurityFilterChain.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[7,50] cannot access org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-crypto\6.1.5\spring-security-crypto-6.1.5.jar(/org/springframework/security/crypto/bcrypt/BCryptPasswordEncoder.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[8,52] cannot access org.springframework.security.crypto.password.PasswordEncoder
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-crypto\6.1.5\spring-security-crypto-6.1.5.jar(/org/springframework/security/crypto/password/PasswordEncoder.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[9,36] cannot access org.springframework.web.cors.CorsConfiguration
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/cors/CorsConfiguration.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[10,36] cannot access org.springframework.web.cors.CorsConfigurationSource
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/cors/CorsConfigurationSource.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[11,36] cannot access org.springframework.web.cors.UrlBasedCorsConfigurationSource
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/cors/UrlBasedCorsConfigurationSource.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[12,32] cannot access org.springframework.http.HttpMethod
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/http/HttpMethod.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[18,2] cannot find symbol
+  symbol: class Configuration
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[7,51] cannot access org.springframework.security.authentication.UsernamePasswordAuthenticationToken
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-core\6.1.5\spring-security-core-6.1.5.jar(/org/springframework/security/authentication/UsernamePasswordAuthenticationToken.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[8,49] cannot access org.springframework.security.core.context.SecurityContextHolder
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-core\6.1.5\spring-security-core-6.1.5.jar(/org/springframework/security/core/context/SecurityContextHolder.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[9,53] cannot access org.springframework.security.core.userdetails.UserDetails
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-core\6.1.5\spring-security-core-6.1.5.jar(/org/springframework/security/core/userdetails/UserDetails.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[10,53] cannot access org.springframework.security.core.userdetails.UserDetailsService
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-core\6.1.5\spring-security-core-6.1.5.jar(/org/springframework/security/core/userdetails/UserDetailsService.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[11,55] cannot access org.springframework.security.web.authentication.WebAuthenticationDetailsSource
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-web\6.1.5\spring-security-web-6.1.5.jar(/org/springframework/security/web/authentication/WebAuthenticationDetailsSource.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[12,38] cannot access org.springframework.stereotype.Component
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-context\6.0.13\spring-context-6.0.13.jar(/org/springframework/stereotype/Component.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[13,38] cannot access org.springframework.web.filter.OncePerRequestFilter
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/filter/OncePerRequestFilter.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[18,46] cannot find symbol
+  symbol: class OncePerRequestFilter
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[17,2] cannot find symbol
+  symbol: class Component
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[35,52] cannot find symbol
+  symbol:   class HttpSecurity
+  location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[35,12] cannot find symbol
+  symbol:   class SecurityFilterChain
+  location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[63,12] cannot find symbol
+  symbol:   class CorsConfigurationSource
+  location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[80,12] cannot find symbol
+  symbol:   class PasswordEncoder
+  location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtUtil.java:[15,2] cannot find symbol
+  symbol: class Component
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[21,19] cannot find symbol
+  symbol:   class UserDetailsService
+  location: class com.example.menu.config.JwtAuthenticationFilter
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[23,53] cannot find symbol
+  symbol:   class UserDetailsService
+  location: class com.example.menu.config.JwtAuthenticationFilter
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/service/CustomUserDetailsService.java:[4,53] cannot access org.springframework.security.core.userdetails.User
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-core\6.1.5\spring-security-core-6.1.5.jar(/org/springframework/security/core/userdetails/User.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/service/CustomUserDetailsService.java:[7,53] cannot access org.springframework.security.core.userdetails.UsernameNotFoundException
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-core\6.1.5\spring-security-core-6.1.5.jar(/org/springframework/security/core/userdetails/UsernameNotFoundException.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/service/CustomUserDetailsService.java:[11,50] cannot find symbol
+  symbol: class UserDetailsService
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/service/CustomUserDetailsService.java:[10,2] cannot find symbol
+  symbol: class Service
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/repository/UserRepository.java:[10,41] cannot find symbol
+  symbol: class JpaRepository
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/service/CustomUserDetailsService.java:[20,12] cannot find symbol
+  symbol:   class UserDetails
+  location: class com.example.menu.service.CustomUserDetailsService
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/service/CustomUserDetailsService.java:[20,67] cannot find symbol
+  symbol:   class UsernameNotFoundException
+  location: class com.example.menu.service.CustomUserDetailsService
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[7,32] cannot access org.springframework.http.ResponseEntity
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/http/ResponseEntity.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[9,31] cannot access org.springframework.dao.DataIntegrityViolationException
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-tx\6.0.13\spring-tx-6.0.13.jar(/org/springframework/dao/DataIntegrityViolationException.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[17,2] cannot find symbol
+  symbol: class RestController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[18,2] cannot find symbol
+  symbol: class RequestMapping
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[21,19] cannot find symbol
+  symbol:   class PasswordEncoder
+  location: class com.example.menu.controller.AuthController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[30,49] cannot find symbol
+  symbol:   class PasswordEncoder
+  location: class com.example.menu.controller.AuthController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[52,12] cannot find symbol
+  symbol:   class ResponseEntity
+  location: class com.example.menu.controller.AuthController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[83,12] cannot find symbol
+  symbol:   class ResponseEntity
+  location: class com.example.menu.controller.AuthController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[129,12] cannot find symbol
+  symbol:   class ResponseEntity
+  location: class com.example.menu.controller.AuthController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/MenuApplication.java:[3,32] cannot access org.springframework.boot.SpringApplication
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\boot\spring-boot\3.1.5\spring-boot-3.1.5.jar(/org/springframework/boot/SpringApplication.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/MenuApplication.java:[4,46] cannot access org.springframework.boot.autoconfigure.SpringBootApplication
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.1.5\spring-boot-autoconfigure-3.1.5.jar(/org/springframework/boot/autoconfigure/SpringBootApplication.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/MenuApplication.java:[9,2] cannot find symbol
+  symbol: class SpringBootApplication
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AdminController.java:[6,35] cannot access org.springframework.core.io.ClassPathResource
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-core\6.0.13\spring-core-6.0.13.jar(/org/springframework/core/io/ClassPathResource.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AdminController.java:[7,37] cannot access org.springframework.jdbc.core.JdbcTemplate
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-jdbc\6.0.13\spring-jdbc-6.0.13.jar(/org/springframework/jdbc/core/JdbcTemplate.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AdminController.java:[8,47] cannot access org.springframework.web.bind.annotation.PostMapping
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/bind/annotation/PostMapping.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AdminController.java:[20,2] cannot find symbol
+  symbol: class RestController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AdminController.java:[21,2] cannot find symbol
+  symbol: class RequestMapping
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AdminController.java:[23,19] cannot find symbol
+  symbol:   class JdbcTemplate
+  location: class com.example.menu.controller.AdminController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AdminController.java:[31,28] cannot find symbol
+  symbol:   class JdbcTemplate
+  location: class com.example.menu.controller.AdminController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/MyBatisConfig.java:[3,37] cannot access org.mybatis.spring.annotation.MapperScan
+  bad class file: C:\Users\uoshj\.m2\repository\org\mybatis\mybatis-spring\3.0.3\mybatis-spring-3.0.3.jar(/org/mybatis/spring/annotation/MapperScan.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/MyBatisConfig.java:[9,2] cannot find symbol
+  symbol: class Configuration
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/MyBatisConfig.java:[10,2] cannot find symbol
+  symbol: class MapperScan
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/SampleController.java:[7,2] cannot find symbol
+  symbol: class RestController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/SampleController.java:[8,2] cannot find symbol
+  symbol: class RequestMapping
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/MenuController.java:[13,1] <any> is not a repeatable annotation type
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/MenuController.java:[14,1] <any> is not a repeatable annotation type
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/MenuController.java:[28,6] cannot access org.springframework.web.bind.annotation.GetMapping
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/bind/annotation/GetMapping.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/MenuController.java:[39,43] cannot access org.springframework.web.bind.annotation.PathVariable
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/bind/annotation/PathVariable.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/MenuController.java:[38,6] cannot find symbol
+  symbol:   class GetMapping
+  location: class com.example.menu.controller.MenuController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/MenuController.java:[49,29] cannot access org.springframework.web.bind.annotation.RequestBody
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/bind/annotation/RequestBody.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/MenuController.java:[48,6] cannot find symbol
+  symbol:   class PostMapping
+  location: class com.example.menu.controller.MenuController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[34,6] cannot find symbol
+  symbol:   class Bean
+  location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[62,6] cannot find symbol
+  symbol:   class Bean
+  location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[79,6] cannot find symbol
+  symbol:   class Bean
+  location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[52,38] cannot find symbol
+  symbol:   class RequestBody
+  location: class com.example.menu.controller.AuthController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[51,6] cannot find symbol
+  symbol:   class PostMapping
+  location: class com.example.menu.controller.AuthController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[83,37] cannot find symbol
+  symbol:   class RequestBody
+  location: class com.example.menu.controller.AuthController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[82,6] cannot find symbol
+  symbol:   class PostMapping
+  location: class com.example.menu.controller.AuthController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[129,37] cannot access org.springframework.web.bind.annotation.RequestHeader
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/bind/annotation/RequestHeader.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[128,6] cannot find symbol
+  symbol:   class GetMapping
+  location: class com.example.menu.controller.AuthController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AdminController.java:[40,6] cannot find symbol
+  symbol:   class PostMapping
+  location: class com.example.menu.controller.AdminController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/SampleController.java:[11,6] cannot find symbol
+  symbol:   class GetMapping
+  location: class com.example.menu.controller.SampleController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/service/MenuService.java:[73,20] cannot find symbol
+  symbol:   method save(com.example.menu.model.Menu)
+  location: variable repo of type com.example.menu.repository.MenuRepository
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[53,92] cannot access org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-web\6.1.5\spring-security-web-6.1.5.jar(/org/springframework/security/web/authentication/UsernamePasswordAuthenticationFilter.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[46,34] cannot find symbol
+  symbol:   variable HttpMethod
+  location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[44,34] cannot find symbol
+  symbol:   variable HttpMethod
+  location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[42,34] cannot find symbol
+  symbol:   variable HttpMethod
+  location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[41,34] cannot find symbol
+  symbol:   variable HttpMethod
+  location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[52,101] cannot access org.springframework.security.config.http.SessionCreationPolicy
+  bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-config\6.1.5\spring-security-config-6.1.5.jar(/org/springframework/security/config/http/SessionCreationPolicy.class)
+    class file has wrong version 61.0, should be 55.0
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[64,9] cannot find symbol
+  symbol:   class CorsConfiguration
+  location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[64,47] cannot find symbol
+  symbol:   class CorsConfiguration
+  location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[70,9] cannot find symbol
+  symbol:   class UrlBasedCorsConfigurationSource
+  location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[70,54] cannot find symbol
+  symbol:   class UrlBasedCorsConfigurationSource
+  location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[81,20] cannot find symbol
+  symbol:   class BCryptPasswordEncoder
+  location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[28,5] method does not override or implement a method from a supertype
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[44,33] cannot find symbol
+  symbol:   variable SecurityContextHolder
+  location: class com.example.menu.config.JwtAuthenticationFilter
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[45,13] cannot find symbol
+  symbol:   class UserDetails
+  location: class com.example.menu.config.JwtAuthenticationFilter
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[47,17] cannot find symbol
+  symbol:   class UsernamePasswordAuthenticationToken
+  location: class com.example.menu.config.JwtAuthenticationFilter
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[47,69] cannot find symbol
+  symbol:   class UsernamePasswordAuthenticationToken
+  location: class com.example.menu.config.JwtAuthenticationFilter
+[INFO] 100 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.732 s
+[INFO] Finished at: 2026-01-08T13:42:36+09:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project menu-backend: Compilation failure: Compilation failure: 
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/MenuController.java:[12,2] cannot access org.springframework.web.bind.annotation.CrossOrigin
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/bind/annotation/CrossOrigin.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/MenuController.java:[13,2] cannot access org.springframework.web.bind.annotation.RestController
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/bind/annotation/RestController.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/MenuController.java:[14,2] cannot access org.springframework.web.bind.annotation.RequestMapping
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/bind/annotation/RequestMapping.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/service/MenuService.java:[6,38] cannot access org.springframework.stereotype.Service
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-context\6.0.13\spring-context-6.0.13.jar(/org/springframework/stereotype/Service.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/service/MenuService.java:[12,2] cannot find symbol
+[ERROR]   symbol: class Service
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/repository/MenuRepository.java:[3,47] cannot access org.springframework.data.jpa.repository.JpaRepository
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\data\spring-data-jpa\3.1.5\spring-data-jpa-3.1.5.jar(/org/springframework/data/jpa/repository/JpaRepository.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/repository/MenuRepository.java:[9,41] cannot find symbol
+[ERROR]   symbol: class JpaRepository
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[3,46] cannot access org.springframework.context.annotation.Bean
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-context\6.0.13\spring-context-6.0.13.jar(/org/springframework/context/annotation/Bean.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[4,46] cannot access org.springframework.context.annotation.Configuration
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-context\6.0.13\spring-context-6.0.13.jar(/org/springframework/context/annotation/Configuration.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[5,67] cannot access org.springframework.security.config.annotation.web.builders.HttpSecurity
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-config\6.1.5\spring-security-config-6.1.5.jar(/org/springframework/security/config/annotation/web/builders/HttpSecurity.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[6,40] cannot access org.springframework.security.web.SecurityFilterChain
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-web\6.1.5\spring-security-web-6.1.5.jar(/org/springframework/security/web/SecurityFilterChain.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[7,50] cannot access org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-crypto\6.1.5\spring-security-crypto-6.1.5.jar(/org/springframework/security/crypto/bcrypt/BCryptPasswordEncoder.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[8,52] cannot access org.springframework.security.crypto.password.PasswordEncoder
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-crypto\6.1.5\spring-security-crypto-6.1.5.jar(/org/springframework/security/crypto/password/PasswordEncoder.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[9,36] cannot access org.springframework.web.cors.CorsConfiguration
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/cors/CorsConfiguration.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[10,36] cannot access org.springframework.web.cors.CorsConfigurationSource
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/cors/CorsConfigurationSource.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[11,36] cannot access org.springframework.web.cors.UrlBasedCorsConfigurationSource
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/cors/UrlBasedCorsConfigurationSource.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[12,32] cannot access org.springframework.http.HttpMethod
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/http/HttpMethod.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[18,2] cannot find symbol
+[ERROR]   symbol: class Configuration
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[7,51] cannot access org.springframework.security.authentication.UsernamePasswordAuthenticationToken
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-core\6.1.5\spring-security-core-6.1.5.jar(/org/springframework/security/authentication/UsernamePasswordAuthenticationToken.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[8,49] cannot access org.springframework.security.core.context.SecurityContextHolder
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-core\6.1.5\spring-security-core-6.1.5.jar(/org/springframework/security/core/context/SecurityContextHolder.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[9,53] cannot access org.springframework.security.core.userdetails.UserDetails
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-core\6.1.5\spring-security-core-6.1.5.jar(/org/springframework/security/core/userdetails/UserDetails.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[10,53] cannot access org.springframework.security.core.userdetails.UserDetailsService
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-core\6.1.5\spring-security-core-6.1.5.jar(/org/springframework/security/core/userdetails/UserDetailsService.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[11,55] cannot access org.springframework.security.web.authentication.WebAuthenticationDetailsSource
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-web\6.1.5\spring-security-web-6.1.5.jar(/org/springframework/security/web/authentication/WebAuthenticationDetailsSource.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[12,38] cannot access org.springframework.stereotype.Component
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-context\6.0.13\spring-context-6.0.13.jar(/org/springframework/stereotype/Component.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[13,38] cannot access org.springframework.web.filter.OncePerRequestFilter
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/filter/OncePerRequestFilter.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[18,46] cannot find symbol
+[ERROR]   symbol: class OncePerRequestFilter
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[17,2] cannot find symbol
+[ERROR]   symbol: class Component
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[35,52] cannot find symbol
+[ERROR]   symbol:   class HttpSecurity
+[ERROR]   location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[35,12] cannot find symbol
+[ERROR]   symbol:   class SecurityFilterChain
+[ERROR]   location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[63,12] cannot find symbol
+[ERROR]   symbol:   class CorsConfigurationSource
+[ERROR]   location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[80,12] cannot find symbol
+[ERROR]   symbol:   class PasswordEncoder
+[ERROR]   location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtUtil.java:[15,2] cannot find symbol
+[ERROR]   symbol: class Component
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[21,19] cannot find symbol
+[ERROR]   symbol:   class UserDetailsService
+[ERROR]   location: class com.example.menu.config.JwtAuthenticationFilter
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[23,53] cannot find symbol
+[ERROR]   symbol:   class UserDetailsService
+[ERROR]   location: class com.example.menu.config.JwtAuthenticationFilter
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/service/CustomUserDetailsService.java:[4,53] cannot access org.springframework.security.core.userdetails.User
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-core\6.1.5\spring-security-core-6.1.5.jar(/org/springframework/security/core/userdetails/User.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/service/CustomUserDetailsService.java:[7,53] cannot access org.springframework.security.core.userdetails.UsernameNotFoundException
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-core\6.1.5\spring-security-core-6.1.5.jar(/org/springframework/security/core/userdetails/UsernameNotFoundException.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/service/CustomUserDetailsService.java:[11,50] cannot find symbol
+[ERROR]   symbol: class UserDetailsService
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/service/CustomUserDetailsService.java:[10,2] cannot find symbol
+[ERROR]   symbol: class Service
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/repository/UserRepository.java:[10,41] cannot find symbol
+[ERROR]   symbol: class JpaRepository
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/service/CustomUserDetailsService.java:[20,12] cannot find symbol
+[ERROR]   symbol:   class UserDetails
+[ERROR]   location: class com.example.menu.service.CustomUserDetailsService
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/service/CustomUserDetailsService.java:[20,67] cannot find symbol
+[ERROR]   symbol:   class UsernameNotFoundException
+[ERROR]   location: class com.example.menu.service.CustomUserDetailsService
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[7,32] cannot access org.springframework.http.ResponseEntity
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/http/ResponseEntity.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[9,31] cannot access org.springframework.dao.DataIntegrityViolationException
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-tx\6.0.13\spring-tx-6.0.13.jar(/org/springframework/dao/DataIntegrityViolationException.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[17,2] cannot find symbol
+[ERROR]   symbol: class RestController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[18,2] cannot find symbol
+[ERROR]   symbol: class RequestMapping
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[21,19] cannot find symbol
+[ERROR]   symbol:   class PasswordEncoder
+[ERROR]   location: class com.example.menu.controller.AuthController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[30,49] cannot find symbol
+[ERROR]   symbol:   class PasswordEncoder
+[ERROR]   location: class com.example.menu.controller.AuthController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[52,12] cannot find symbol
+[ERROR]   symbol:   class ResponseEntity
+[ERROR]   location: class com.example.menu.controller.AuthController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[83,12] cannot find symbol
+[ERROR]   symbol:   class ResponseEntity
+[ERROR]   location: class com.example.menu.controller.AuthController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[129,12] cannot find symbol
+[ERROR]   symbol:   class ResponseEntity
+[ERROR]   location: class com.example.menu.controller.AuthController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/MenuApplication.java:[3,32] cannot access org.springframework.boot.SpringApplication
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\boot\spring-boot\3.1.5\spring-boot-3.1.5.jar(/org/springframework/boot/SpringApplication.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/MenuApplication.java:[4,46] cannot access org.springframework.boot.autoconfigure.SpringBootApplication
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.1.5\spring-boot-autoconfigure-3.1.5.jar(/org/springframework/boot/autoconfigure/SpringBootApplication.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/MenuApplication.java:[9,2] cannot find symbol
+[ERROR]   symbol: class SpringBootApplication
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AdminController.java:[6,35] cannot access org.springframework.core.io.ClassPathResource
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-core\6.0.13\spring-core-6.0.13.jar(/org/springframework/core/io/ClassPathResource.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AdminController.java:[7,37] cannot access org.springframework.jdbc.core.JdbcTemplate
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-jdbc\6.0.13\spring-jdbc-6.0.13.jar(/org/springframework/jdbc/core/JdbcTemplate.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AdminController.java:[8,47] cannot access org.springframework.web.bind.annotation.PostMapping
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/bind/annotation/PostMapping.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AdminController.java:[20,2] cannot find symbol
+[ERROR]   symbol: class RestController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AdminController.java:[21,2] cannot find symbol
+[ERROR]   symbol: class RequestMapping
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AdminController.java:[23,19] cannot find symbol
+[ERROR]   symbol:   class JdbcTemplate
+[ERROR]   location: class com.example.menu.controller.AdminController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AdminController.java:[31,28] cannot find symbol
+[ERROR]   symbol:   class JdbcTemplate
+[ERROR]   location: class com.example.menu.controller.AdminController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/MyBatisConfig.java:[3,37] cannot access org.mybatis.spring.annotation.MapperScan
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\mybatis\mybatis-spring\3.0.3\mybatis-spring-3.0.3.jar(/org/mybatis/spring/annotation/MapperScan.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/MyBatisConfig.java:[9,2] cannot find symbol
+[ERROR]   symbol: class Configuration
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/MyBatisConfig.java:[10,2] cannot find symbol
+[ERROR]   symbol: class MapperScan
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/SampleController.java:[7,2] cannot find symbol
+[ERROR]   symbol: class RestController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/SampleController.java:[8,2] cannot find symbol
+[ERROR]   symbol: class RequestMapping
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/MenuController.java:[13,1] <any> is not a repeatable annotation type
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/MenuController.java:[14,1] <any> is not a repeatable annotation type
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/MenuController.java:[28,6] cannot access org.springframework.web.bind.annotation.GetMapping
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/bind/annotation/GetMapping.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/MenuController.java:[39,43] cannot access org.springframework.web.bind.annotation.PathVariable
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/bind/annotation/PathVariable.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/MenuController.java:[38,6] cannot find symbol
+[ERROR]   symbol:   class GetMapping
+[ERROR]   location: class com.example.menu.controller.MenuController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/MenuController.java:[49,29] cannot access org.springframework.web.bind.annotation.RequestBody
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/bind/annotation/RequestBody.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/MenuController.java:[48,6] cannot find symbol
+[ERROR]   symbol:   class PostMapping
+[ERROR]   location: class com.example.menu.controller.MenuController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[34,6] cannot find symbol
+[ERROR]   symbol:   class Bean
+[ERROR]   location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[62,6] cannot find symbol
+[ERROR]   symbol:   class Bean
+[ERROR]   location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[79,6] cannot find symbol
+[ERROR]   symbol:   class Bean
+[ERROR]   location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[52,38] cannot find symbol
+[ERROR]   symbol:   class RequestBody
+[ERROR]   location: class com.example.menu.controller.AuthController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[51,6] cannot find symbol
+[ERROR]   symbol:   class PostMapping
+[ERROR]   location: class com.example.menu.controller.AuthController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[83,37] cannot find symbol
+[ERROR]   symbol:   class RequestBody
+[ERROR]   location: class com.example.menu.controller.AuthController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[82,6] cannot find symbol
+[ERROR]   symbol:   class PostMapping
+[ERROR]   location: class com.example.menu.controller.AuthController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[129,37] cannot access org.springframework.web.bind.annotation.RequestHeader
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\spring-web\6.0.13\spring-web-6.0.13.jar(/org/springframework/web/bind/annotation/RequestHeader.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AuthController.java:[128,6] cannot find symbol
+[ERROR]   symbol:   class GetMapping
+[ERROR]   location: class com.example.menu.controller.AuthController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/AdminController.java:[40,6] cannot find symbol
+[ERROR]   symbol:   class PostMapping
+[ERROR]   location: class com.example.menu.controller.AdminController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/controller/SampleController.java:[11,6] cannot find symbol
+[ERROR]   symbol:   class GetMapping
+[ERROR]   location: class com.example.menu.controller.SampleController
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/service/MenuService.java:[73,20] cannot find symbol
+[ERROR]   symbol:   method save(com.example.menu.model.Menu)
+[ERROR]   location: variable repo of type com.example.menu.repository.MenuRepository
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[53,92] cannot access org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-web\6.1.5\spring-security-web-6.1.5.jar(/org/springframework/security/web/authentication/UsernamePasswordAuthenticationFilter.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[46,34] cannot find symbol
+[ERROR]   symbol:   variable HttpMethod
+[ERROR]   location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[44,34] cannot find symbol
+[ERROR]   symbol:   variable HttpMethod
+[ERROR]   location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[42,34] cannot find symbol
+[ERROR]   symbol:   variable HttpMethod
+[ERROR]   location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[41,34] cannot find symbol
+[ERROR]   symbol:   variable HttpMethod
+[ERROR]   location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[52,101] cannot access org.springframework.security.config.http.SessionCreationPolicy
+[ERROR]   bad class file: C:\Users\uoshj\.m2\repository\org\springframework\security\spring-security-config\6.1.5\spring-security-config-6.1.5.jar(/org/springframework/security/config/http/SessionCreationPolicy.class)
+[ERROR]     class file has wrong version 61.0, should be 55.0
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[64,9] cannot find symbol
+[ERROR]   symbol:   class CorsConfiguration
+[ERROR]   location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[64,47] cannot find symbol
+[ERROR]   symbol:   class CorsConfiguration
+[ERROR]   location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[70,9] cannot find symbol
+[ERROR]   symbol:   class UrlBasedCorsConfigurationSource
+[ERROR]   location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[70,54] cannot find symbol
+[ERROR]   symbol:   class UrlBasedCorsConfigurationSource
+[ERROR]   location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[81,20] cannot find symbol
+[ERROR]   symbol:   class BCryptPasswordEncoder
+[ERROR]   location: class com.example.menu.config.SecurityConfig
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[28,5] method does not override or implement a method from a supertype
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[44,33] cannot find symbol
+[ERROR]   symbol:   variable SecurityContextHolder
+[ERROR]   location: class com.example.menu.config.JwtAuthenticationFilter
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[45,13] cannot find symbol
+[ERROR]   symbol:   class UserDetails
+[ERROR]   location: class com.example.menu.config.JwtAuthenticationFilter
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[47,17] cannot find symbol
+[ERROR]   symbol:   class UsernamePasswordAuthenticationToken
+[ERROR]   location: class com.example.menu.config.JwtAuthenticationFilter
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/JwtAuthenticationFilter.java:[47,69] cannot find symbol
+[ERROR]   symbol:   class UsernamePasswordAuthenticationToken
+[ERROR]   location: class com.example.menu.config.JwtAuthenticationFilter
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

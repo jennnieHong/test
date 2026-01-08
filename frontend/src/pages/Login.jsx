@@ -1,20 +1,37 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import api from '../api'
 import AlertPopup from '../components/AlertPopup'
 
-export default function Login(){
+export default function Login(props){
   const [id, setId] = useState('')
   const [pw, setPw] = useState('')
   const [err, setErr] = useState(null)
   const navigate = useNavigate()
 
+  useEffect(()=>{
+    const token = localStorage.getItem('token')
+    const storedNick = localStorage.getItem('nickname')
+    if(token && storedNick){
+      if(props.onLogin) props.onLogin(storedNick)
+      else navigate('/dashboard')
+    }
+  },[])
+
   function submit(e){
     e.preventDefault()
     setErr(null)
     api.post('/auth/login', { username: id, password: pw })
-      .then(()=>{
-        navigate('/dashboard')
+      .then((r)=>{
+        const { token, userInfo } = r.data
+        if(token) localStorage.setItem('token', token)
+        if(userInfo) {
+          localStorage.setItem('userInfo', JSON.stringify(userInfo))
+          localStorage.setItem('nickname', userInfo.nickname) // Keep for backward compatibility/minor usage
+        }
+        
+        if(props.onLogin) props.onLogin(userInfo || { nickname: r.data.nickname })
+        else navigate('/dashboard')
       })
       .catch(errRes=>{
         // parse backend response for better messaging

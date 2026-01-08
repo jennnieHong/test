@@ -5,6 +5,7 @@ import SystemManagement from '../pages/menuScreens/SystemManagement'
 import PurchaseManagement from '../pages/menuScreens/PurchaseManagement'
 import Inventory from '../pages/menuScreens/Inventory'
 import Production from '../pages/menuScreens/Production'
+import SampleGuide from '../pages/SampleGuide'
 
 function DefaultScreen({node}){
   return (
@@ -48,7 +49,8 @@ export default function Content(){
     'S0101': Inventory,
     'S0102': Inventory,
     'S0121': ({node}) => <div><h2>{node.name}</h2><p>소메뉴 상세</p></div>,
-    'S0211': ({node}) => <div><h2>{node.name}</h2><p>소메뉴 상세</p></div>
+    'S0211': ({node}) => <div><h2>{node.name}</h2><p>소메뉴 상세</p></div>,
+    'S0311': SampleGuide
   }
 
   const Screen = map[node.code] || DefaultScreen

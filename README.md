@@ -1,6 +1,6 @@
 프로젝트 구조 예시
 
-- backend: Spring Boot (Java 17) - 메뉴 API 제공
+- backend: Spring Boot (Java 11) - 메뉴 API 제공
 - frontend: React + Vite - 좌측메뉴, 탭, 팝업
 - docker-compose.yml: PostgreSQL 서비스
 

@@ -30,4 +30,5 @@ INSERT INTO menus (id, name, code, level, parent_id) VALUES (121, '소메뉴 A-2
 INSERT INTO users (id, username, password, email, roles) VALUES (100, 'admin', __ENC__admin__, 'admin@example.com', 'ADMIN') ON CONFLICT (id) DO NOTHING;
 INSERT INTO users (id, username, password, email, roles) VALUES (101, 'demo', __ENC__demo123__, 'demo@example.com', 'USER') ON CONFLICT (id) DO NOTHING;
 INSERT INTO menus (id, name, code, level, parent_id) VALUES (211, '소메뉴 B-1-1', 'S0211', 3, 21) ON CONFLICT (id) DO NOTHING;
+INSERT INTO menus (id, name, code, level, parent_id) VALUES (311, '샘플 가이드', 'S0311', 3, 31) ON CONFLICT (id) DO NOTHING;
 

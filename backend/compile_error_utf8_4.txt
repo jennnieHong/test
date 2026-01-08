@@ -1,0 +1,44 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.example:menu-backend >----------------------
+[INFO] Building menu-backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ menu-backend ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ menu-backend ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 17 source files to C:\workspace\react\backend\target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[41,17] method requestMatchers in class org.springframework.security.config.annotation.web.AbstractRequestMatcherRegistry<C> cannot be applied to given types;
+  required: org.springframework.security.web.util.matcher.RequestMatcher[]
+  found: org.springframework.http.HttpMethod,java.lang.String
+  reason: varargs mismatch; org.springframework.http.HttpMethod cannot be converted to org.springframework.security.web.util.matcher.RequestMatcher
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.701 s
+[INFO] Finished at: 2026-01-08T13:43:53+09:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.10.1:compile (default-compile) on project menu-backend: Compilation failure
+[ERROR] /C:/workspace/react/backend/src/main/java/com/example/menu/config/SecurityConfig.java:[41,17] method requestMatchers in class org.springframework.security.config.annotation.web.AbstractRequestMatcherRegistry<C> cannot be applied to given types;
+[ERROR]   required: org.springframework.security.web.util.matcher.RequestMatcher[]
+[ERROR]   found: org.springframework.http.HttpMethod,java.lang.String
+[ERROR]   reason: varargs mismatch; org.springframework.http.HttpMethod cannot be converted to org.springframework.security.web.util.matcher.RequestMatcher
+[ERROR] 
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
