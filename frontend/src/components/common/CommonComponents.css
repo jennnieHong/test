@@ -9,6 +9,16 @@
   --common-selected: #e3f2fd;
 }
 
+body.dark-theme {
+  --common-primary: #3b82f6;
+  --common-border: #334155;
+  --common-text: #f8fafc;
+  --common-muted: #94a3b8;
+  --common-bg: #1e293b;
+  --common-hover: #334155;
+  --common-selected: rgba(59, 130, 246, 0.2);
+}
+
 .common-form-group {
   display: flex;
   align-items: center;

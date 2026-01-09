@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React, {useEffect, useState} from 'react'
+import { Link, useNavigate } from 'react-router-dom'  
+import { useTranslation } from '../i18n/LanguageContext'
 import api from '../api'
 import AlertPopup from '../components/AlertPopup'
 
@@ -8,6 +9,7 @@ export default function Login(props){
   const [pw, setPw] = useState('')
   const [err, setErr] = useState(null)
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   useEffect(()=>{
     const token = localStorage.getItem('token')
@@ -38,32 +40,32 @@ export default function Login(props){
         const data = errRes && errRes.response && errRes.response.data ? errRes.response.data : null
         if(data){
           if(data.error === 'locked'){
-            setErr(data.message || '계정이 잠겼습니다.')
+            setErr(data.message || t('login.err_locked'))
             return
           }
           if(data.error === 'invalid_password'){
             const left = data.attemptsLeft
-            setErr((left!==undefined) ? `비밀번호가 틀렸습니다. 남은 시도: ${left}` : (data.message || '비밀번호가 틀렸습니다.'))
+            setErr((left!==undefined) ? `${t('login.err_invalid_pw')} ${t('login.attempts_left')}: ${left}` : (data.message || t('login.err_invalid_pw')))
             return
           }
-          setErr(data.message || '로그인 실패')
+          setErr(data.message || t('login.err_failed'))
           return
         }
-        setErr('로그인 실패')
+        setErr(t('login.err_failed'))
       })
   }
 
   return (
     <div className="login-wrapper">
       <div className="login-card">
-        <div className="logo">LIVE STOCK</div>
+        <div className="logo">{t('login.title')}</div>
         <form onSubmit={submit} className="login-form">
-          <input placeholder="아이디" value={id} onChange={e=>setId(e.target.value)} />
-          <input placeholder="비밀번호" value={pw} onChange={e=>setPw(e.target.value)} type="password" />
-          <label className="remember"><input type="checkbox"/> 아이디 저장</label>
-          <button className="login-btn">LOGIN</button>
+          <input placeholder={t('login.username')} value={id} onChange={e=>setId(e.target.value)} />
+          <input placeholder={t('login.password')} value={pw} onChange={e=>setPw(e.target.value)} type="password" />
+          <label className="remember"><input type="checkbox"/> {t('login.remember_me')}</label>
+          <button className="login-btn">{t('login.login_btn')}</button>
           <div className="login-actions">
-            <Link to="/signup" className="signup-link">회원가입</Link>
+            <Link to="/signup" className="signup-link">{t('login.signup_link')}</Link>
           </div>
           {err && <div className="login-error">{err}</div>}
         </form>

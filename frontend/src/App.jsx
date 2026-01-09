@@ -19,6 +19,8 @@ import SearchSample from './pages/SearchSample'
 import SearchLayoutSample from './pages/SearchLayoutSample'
 import ApiSample from './pages/ApiSample'
 import MultiApiSample from './pages/MultiApiSample'
+import { useTranslation } from './i18n/LanguageContext'
+import { useTheme } from './theme/ThemeContext'
 
 export default function App({isMobile}){
   const [userInfo, setUserInfo] = useState(() => {
@@ -41,6 +43,9 @@ export default function App({isMobile}){
   const [menus,setMenus] = useState([])
   const [openTabs,setOpenTabs] = useState([])
   const [activeId,setActiveId] = useState(null)
+  
+  const { t, lang, setLang } = useTranslation()
+  const { theme, toggleTheme } = useTheme()
   const [alert, setAlert] = useState(null)
   const [detail, setDetail] = useState(null)
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false)
@@ -162,7 +167,25 @@ export default function App({isMobile}){
   // 4. Render Public Layout (only for unauthenticated users at login/signup)
   if (!isAuthenticated) {
     return (
-      <div className="app-public" style={{height:'100dvh', display:'flex', alignItems:'center', justifyContent:'center', background:'#f8fafc'}}>
+      <div className="app-public" style={{height:'100dvh', display:'flex', alignItems:'center', justifyContent:'center', background:'var(--bg)', color:'var(--text)', position:'relative'}}>
+        {/* Floating Controls for Public View */}
+        <div style={{position:'absolute', top:20, right:20, display:'flex', gap:12, alignItems:'center', background: 'rgba(0,0,0,0.05)', padding:'8px 12px', borderRadius:20}}>
+          <select 
+            value={lang} 
+            onChange={(e)=>setLang(e.target.value)}
+            style={{background:'none', border:'none', color:'inherit', fontSize:13, cursor:'pointer', fontWeight:600}}
+          >
+            <option value="ko" style={{color:'#000'}}>KO</option>
+            <option value="en" style={{color:'#000'}}>EN</option>
+          </select>
+          <button 
+            onClick={toggleTheme}
+            style={{background:'none', border:'none', color:'inherit', cursor:'pointer', fontSize:18, display:'flex', alignItems:'center', padding:0}}
+          >
+            {theme === 'light' ? '🌙' : '☀️'}
+          </button>
+        </div>
+
         <Routes>
           <Route path="/login" element={<Login onLogin={(info)=>{ 
             if(info) { setNickname(info.nickname); setUserInfo(info); }
@@ -192,12 +215,35 @@ export default function App({isMobile}){
             <div className="brand">LIVE STOCK</div>
         </div>
         <div className="user-area">
-          <div style={{display:'flex',alignItems:'center',gap:12}}>
-            <div style={{display:'flex', flexDirection:'column', alignItems:'flex-end'}}>
-               <div style={{fontSize:12,fontWeight:'bold',color:'#fff'}}>{nickname || '관리자'}</div>
-               <div style={{fontSize:10,color:'#fff',opacity:0.7}}>{userInfo?.department || '소속없음'} ({userInfo?.roles || 'USER'})</div>
+          <div style={{display:'flex',alignItems:'center',gap:16}}>
+            {/* Theme & Language Controls */}
+            <div className="header-controls" style={{display:'flex', alignItems:'center', gap:8}}>
+              <select 
+                className="lang-select" 
+                value={lang} 
+                onChange={(e)=>setLang(e.target.value)}
+                style={{background:'rgba(255,255,255,0.1)', color:'#fff', border:'1px solid rgba(255,255,255,0.2)', borderRadius:4, padding:'2px 4px', fontSize:11, cursor:'pointer'}}
+              >
+                <option value="ko" style={{color:'#000'}}>KO</option>
+                <option value="en" style={{color:'#000'}}>EN</option>
+              </select>
+              <button 
+                className="theme-toggle-btn" 
+                onClick={toggleTheme}
+                style={{background:'none', border:'none', color:'#fff', cursor:'pointer', fontSize:18, padding:0, display:'flex', alignItems:'center'}}
+                title={theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+              >
+                {theme === 'light' ? '🌙' : '☀️'}
+              </button>
             </div>
-            <button className="logout-btn" onClick={handleLogout}>로그아웃</button>
+
+            <div style={{display:'flex', gap:10, alignItems:'center', borderLeft:'1px solid rgba(255,255,255,0.2)', paddingLeft:12}}>
+              <div style={{display:'flex', flexDirection:'column', alignItems:'flex-end'}}>
+                 <div style={{fontSize:12,fontWeight:'bold',color:'#fff'}}>{nickname || '관리자'}</div>
+                 <div style={{fontSize:10,color:'#fff',opacity:0.7}}>{userInfo?.department || t('common.department')} ({userInfo?.roles || 'USER'})</div>
+              </div>
+              <button className="logout-btn" onClick={handleLogout}>{t('common.logout')}</button>
+            </div>
           </div>
         </div>
       </header>

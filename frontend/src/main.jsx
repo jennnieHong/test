@@ -4,6 +4,9 @@ import App from './App'
 import './styles.css'
 import { BrowserRouter } from 'react-router-dom'
 
+import { LanguageProvider } from './i18n/LanguageContext'
+import { ThemeProvider } from './theme/ThemeContext'
+
 function Root(){
 	const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
 	useEffect(()=>{
@@ -13,9 +16,13 @@ function Root(){
 	},[])
 
 	return (
-		<BrowserRouter>
-			<App isMobile={isMobile} />
-		</BrowserRouter>
+		<ThemeProvider>
+			<LanguageProvider>
+				<BrowserRouter>
+					<App isMobile={isMobile} />
+				</BrowserRouter>
+			</LanguageProvider>
+		</ThemeProvider>
 	)
 }
 

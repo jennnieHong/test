@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import api from '../api'
+import { useTranslation } from '../i18n/LanguageContext'
 
 export default function SignUp(){
   const [form, setForm] = useState({username:'',password:'',email:'', nickname:''})
   const [msg, setMsg] = useState(null)
+  const { t } = useTranslation()
 
   function change(e){ setForm({...form, [e.target.name]: e.target.value}) }
   function submit(e){
@@ -12,11 +14,11 @@ export default function SignUp(){
     setMsg(null)
     api.post('/auth/signup', form)
       .then(r=>{
-        setMsg('가입이 완료되었습니다. 로그인 페이지로 이동합니다.')
+        setMsg(t('signup.success_msg'))
         setTimeout(()=> window.location.href = '/login', 1200)
       })
       .catch(err=>{
-        const m = err?.response?.data?.error || '가입에 실패했습니다.'
+        const m = err?.response?.data?.error || t('signup.fail_msg')
         setMsg(m)
       })
   }
@@ -24,16 +26,16 @@ export default function SignUp(){
   return (
     <div className="login-wrapper">
       <div className="login-card">
-        <div className="logo">LIVE STOCK</div>
-        <h3>회원가입</h3>
+        <div className="logo">{t('login.title')}</div>
+        <h3>{t('signup.title')}</h3>
         <form onSubmit={submit} className="login-form">
-          <input name="username" placeholder="아이디" value={form.username} onChange={change} />
-          <input name="nickname" placeholder="닉네임" value={form.nickname} onChange={change} />
-          <input name="email" placeholder="이메일" value={form.email} onChange={change} />
-          <input name="password" placeholder="비밀번호" type="password" value={form.password} onChange={change} />
-          <button className="login-btn">회원가입</button>
+          <input name="username" placeholder={t('login.username')} value={form.username} onChange={change} />
+          <input name="nickname" placeholder={t('common.nickname')} value={form.nickname} onChange={change} />
+          <input name="email" placeholder="E-mail" value={form.email} onChange={change} />
+          <input name="password" placeholder={t('login.password')} type="password" value={form.password} onChange={change} />
+          <button className="login-btn">{t('signup.signup_btn')}</button>
           <div className="login-actions">
-            <Link to="/login" className="signup-link">로그인으로 돌아가기</Link>
+            <Link to="/login" className="signup-link">{t('login.back_to_login')}</Link>
           </div>
         </form>
         {msg && <div className="info" style={{marginTop:15, color: 'var(--primary)'}}>{msg}</div>}
