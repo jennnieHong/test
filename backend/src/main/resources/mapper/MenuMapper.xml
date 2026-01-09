@@ -3,13 +3,13 @@
 <mapper namespace="com.example.menu.mapper.MenuMapper">
 
     <select id="findAll" resultType="com.example.menu.model.Menu">
-        SELECT id, name, code, level, parent_id as parentId
+        SELECT id, name, code, level, parent_id as parentId, device_type as deviceType
         FROM menus
         ORDER BY id ASC
     </select>
 
     <select id="findByLevel" resultType="com.example.menu.model.Menu">
-        SELECT id, name, code, level, parent_id as parentId
+        SELECT id, name, code, level, parent_id as parentId, device_type as deviceType
         FROM menus
         WHERE level = #{level}
         ORDER BY id ASC

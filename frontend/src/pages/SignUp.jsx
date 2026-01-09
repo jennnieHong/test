@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom'
 import api from '../api'
 
 export default function SignUp(){
@@ -21,16 +22,22 @@ export default function SignUp(){
   }
 
   return (
-    <div className="signup-page screen">
-      <h2>회원가입</h2>
-      <form onSubmit={submit} className="signup-form">
-        <input name="username" placeholder="아이디" value={form.username} onChange={change} />
-        <input name="nickname" placeholder="닉네임" value={form.nickname} onChange={change} />
-        <input name="email" placeholder="이메일" value={form.email} onChange={change} />
-        <input name="password" placeholder="비밀번호" type="password" value={form.password} onChange={change} />
-        <button>회원가입</button>
-      </form>
-      {msg && <div className="info">{msg}</div>}
+    <div className="login-wrapper">
+      <div className="login-card">
+        <div className="logo">LIVE STOCK</div>
+        <h3>회원가입</h3>
+        <form onSubmit={submit} className="login-form">
+          <input name="username" placeholder="아이디" value={form.username} onChange={change} />
+          <input name="nickname" placeholder="닉네임" value={form.nickname} onChange={change} />
+          <input name="email" placeholder="이메일" value={form.email} onChange={change} />
+          <input name="password" placeholder="비밀번호" type="password" value={form.password} onChange={change} />
+          <button className="login-btn">회원가입</button>
+          <div className="login-actions">
+            <Link to="/login" className="signup-link">로그인으로 돌아가기</Link>
+          </div>
+        </form>
+        {msg && <div className="info" style={{marginTop:15, color: 'var(--primary)'}}>{msg}</div>}
+      </div>
     </div>
   )
 }

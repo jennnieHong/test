@@ -6,6 +6,14 @@ import PurchaseManagement from '../pages/menuScreens/PurchaseManagement'
 import Inventory from '../pages/menuScreens/Inventory'
 import Production from '../pages/menuScreens/Production'
 import SampleGuide from '../pages/SampleGuide'
+import ComponentDemo from '../pages/ComponentDemo'
+import SearchSample from '../pages/SearchSample'
+import SearchLayoutSample from '../pages/SearchLayoutSample'
+import ApiSample from '../pages/ApiSample'
+import MultiApiSample from '../pages/MultiApiSample'
+import MobileComponentSample from '../pages/mobile/MobileComponentSample'
+import MobileApiSample from '../pages/mobile/MobileApiSample'
+import MobileMultiApiSample from '../pages/mobile/MobileMultiApiSample'
 
 function DefaultScreen({node}){
   return (
@@ -50,7 +58,15 @@ export default function Content(){
     'S0102': Inventory,
     'S0121': ({node}) => <div><h2>{node.name}</h2><p>소메뉴 상세</p></div>,
     'S0211': ({node}) => <div><h2>{node.name}</h2><p>소메뉴 상세</p></div>,
-    'S0311': SampleGuide
+    'S0311': SampleGuide,
+    'G001': ComponentDemo,
+    'G002': SearchSample,
+    'G003': SearchLayoutSample,
+    'G004': ApiSample,
+    'G005': MultiApiSample,
+    'G006': MobileComponentSample,
+    'G007': MobileApiSample,
+    'G008': MobileMultiApiSample
   }
 
   const Screen = map[node.code] || DefaultScreen

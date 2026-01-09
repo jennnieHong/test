@@ -14,8 +14,30 @@ import AdminSeed from './pages/AdminSeed'
 import SignUp from './pages/SignUp'
 import AdminDashboard from './pages/AdminDashboard'
 import Permissions from './pages/Permissions'
+import ComponentDemo from './pages/ComponentDemo'
+import SearchSample from './pages/SearchSample'
+import SearchLayoutSample from './pages/SearchLayoutSample'
+import ApiSample from './pages/ApiSample'
+import MultiApiSample from './pages/MultiApiSample'
 
 export default function App({isMobile}){
+  const [userInfo, setUserInfo] = useState(() => {
+    try {
+      const stored = localStorage.getItem('userInfo');
+      return stored ? JSON.parse(stored) : null;
+    } catch (e) { return null; }
+  });
+  const [nickname, setNickname] = useState(() => {
+    try {
+      const stored = localStorage.getItem('userInfo');
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        return parsed.nickname || '';
+      }
+      return '';
+    } catch (e) { return ''; }
+  });
+
   const [menus,setMenus] = useState([])
   const [openTabs,setOpenTabs] = useState([])
   const [activeId,setActiveId] = useState(null)
@@ -24,9 +46,34 @@ export default function App({isMobile}){
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false)
   const navigate = useNavigate()
 
+  // Determine if we should show the full app layout
+  const isAuthenticated = !!nickname;
+
   useEffect(()=>{
-    api.get('/menus').then(r=>setMenus(r.data)).catch(e=>setAlert('메뉴 로드 실패'))
-  },[])
+    if (isAuthenticated) {
+      api.get('/menus').then(r=>{
+        const allMenus = r.data;
+        const filtered = filterMenus(allMenus, isMobile);
+        setMenus(filtered);
+      }).catch(e=>setAlert('메뉴 로드 실패'))
+    } else {
+      setMenus([]); // Clear menus when logged out
+    }
+  },[isAuthenticated, isMobile])
+
+  function filterMenus(nodes, isMobile) {
+    if (!nodes) return [];
+    return nodes
+      .filter(node => {
+        const type = node.deviceType;
+        if (isMobile) return type === 'MOBILE' || type === 'BOTH';
+        return type === 'PC' || type === 'BOTH';
+      })
+      .map(node => ({
+        ...node,
+        children: filterMenus(node.children, isMobile)
+      }));
+  }
 
   function openMenu(node){
     setOpenTabs(prev=>{
@@ -59,8 +106,6 @@ export default function App({isMobile}){
     navigate('/login')
   }
 
-  const [userInfo, setUserInfo] = useState(null)
-  const [nickname, setNickname] = useState('')
 
   useEffect(()=>{
     const token = localStorage.getItem('token')
@@ -97,8 +142,44 @@ export default function App({isMobile}){
 
   const [tabletMenuOpen, setTabletMenuOpen] = useState(false)
 
-  if(isMobile) return <MobileApp nickname={nickname} userInfo={userInfo} menus={menus} />
+  const isAuthPath = ['/login', '/signup'].includes(window.location.pathname);
 
+  // 1. Root redirect
+  if (window.location.pathname === '/') {
+    return <Navigate to={isAuthenticated ? "/dashboard" : "/login"} replace />;
+  }
+
+  // 2. Prevent logged-in users from staying on login/signup pages
+  if (isAuthenticated && isAuthPath) {
+    return <Navigate to="/dashboard" replace />;
+  }
+
+  // 3. Force unauthenticated users to login, except if they are at signup
+  if (!isAuthenticated && !isAuthPath) {
+    return <Navigate to="/login" replace />;
+  }
+
+  // 4. Render Public Layout (only for unauthenticated users at login/signup)
+  if (!isAuthenticated) {
+    return (
+      <div className="app-public" style={{height:'100dvh', display:'flex', alignItems:'center', justifyContent:'center', background:'#f8fafc'}}>
+        <Routes>
+          <Route path="/login" element={<Login onLogin={(info)=>{ 
+            if(info) { setNickname(info.nickname); setUserInfo(info); }
+            navigate('/dashboard') 
+          }} />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="*" element={<Navigate to="/login" replace />} />
+        </Routes>
+        {alert && <AlertPopup message={alert} onClose={()=>setAlert(null)} />}
+      </div>
+    );
+  }
+
+  // 3. Authenticated and at a private route
+  if(isMobile) return <MobileApp nickname={nickname} userInfo={userInfo} menus={menus} onLogout={confirmLogout} />
+
+  // PC Private Layout
   return (
     <div className="app">
       {/* Tablet overlay to close menu */}
@@ -133,8 +214,20 @@ export default function App({isMobile}){
             tabs={openTabs}
             activeId={activeId}
             onClose={(id)=>{
-              setOpenTabs(t=>t.filter(x=>x.id!==id))
-              if(activeId===id) setActiveId(null)
+              const newTabs = openTabs.filter(x=>x.id!==id)
+              setOpenTabs(newTabs)
+              if(activeId===id) {
+                if(newTabs.length > 0) {
+                  const last = newTabs[newTabs.length - 1]
+                  setActiveId(last.id)
+                  navigate(`/menu/${last.id}`)
+                } else {
+                  setActiveId(null)
+                  navigate('/dashboard')
+                }
+              } else if(newTabs.length === 0) {
+                navigate('/dashboard')
+              }
             }}
             onCloseAll={()=>{ setOpenTabs([]); setActiveId(null); navigate('/dashboard') }}
             onSelect={(id)=>{ setActiveId(id); navigate(`/menu/${id}`) }}
@@ -154,6 +247,11 @@ export default function App({isMobile}){
               <Route path="/admin" element={<AdminDashboard />} />
               <Route path="/admin/permissions" element={<Permissions />} />
               <Route path="/admin/seed" element={<AdminSeed />} />
+              <Route path="/admin/demo" element={<ComponentDemo />} />
+              <Route path="/admin/sample" element={<SearchSample />} />
+              <Route path="/admin/layout" element={<SearchLayoutSample />} />
+              <Route path="/admin/api-sample" element={<ApiSample />} />
+              <Route path="/admin/multi-api" element={<MultiApiSample />} />
               <Route path="/" element={<Navigate to="/login" replace />} />
             </Routes>
           </div>

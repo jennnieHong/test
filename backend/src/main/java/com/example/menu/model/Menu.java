@@ -16,6 +16,7 @@ public class Menu {
 
     private String name;
     private String code;
+    private String deviceType; // PC, MOBILE, BOTH
 
     private Integer level; // 1=대,2=중,3=소
 
@@ -32,12 +33,14 @@ public class Menu {
      * @param code Menu code.
      * @param level Menu level (1=Large, 2=Medium, 3=Small).
      * @param parentId ID of the parent menu.
+     * @param deviceType Device type (PC, MOBILE, BOTH).
      */
-    public Menu(String name, String code, Integer level, Long parentId) {
+    public Menu(String name, String code, Integer level, Long parentId, String deviceType) {
         this.name = name;
         this.code = code;
         this.level = level;
         this.parentId = parentId;
+        this.deviceType = deviceType;
     }
 
     /**
@@ -94,4 +97,15 @@ public class Menu {
      * @param parentId The parent ID to set.
      */
     public void setParentId(Long parentId) { this.parentId = parentId; }
+
+    /**
+     * Gets the device type.
+     * @return The device type.
+     */
+    public String getDeviceType() { return deviceType; }
+    /**
+     * Sets the device type.
+     * @param deviceType The device type to set.
+     */
+    public void setDeviceType(String deviceType) { this.deviceType = deviceType; }
 }

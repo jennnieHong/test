@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import Login from './Login'
 import ConfirmPopup from '../components/ConfirmPopup'
 import DetailPopup from '../components/DetailPopup'
 import MultiSelectPopup from '../components/MultiSelectPopup'
@@ -10,6 +9,11 @@ function MobileDashboard(){
 
 import MobileStock from './mobile/MobileStock'
 import NavTestScreen from './mobile/NavTestScreen'
+import MobileProductionSample from './mobile/MobileProductionSample'
+import MobileInventorySample from './mobile/MobileInventorySample'
+import MobileComponentSample from './mobile/MobileComponentSample'
+import MobileApiSample from './mobile/MobileApiSample'
+import MobileMultiApiSample from './mobile/MobileMultiApiSample'
 
 // Dummy Detail for Deep Link Test
 function StockDetail({params, onBack}){
@@ -122,20 +126,22 @@ function MobileTreeNode({node, onNavigate, onClose, activeView, depth = 0}){
     )
 }
 
-function MobileMenu({menus, onNavigate, onClose, activeView, nickname, userInfo}){
+function MobileMenu({show, menus, onNavigate, onClose, activeView, nickname, userInfo}){
     return (
         <div className="mobile-menu-overlay" onClick={onClose} style={{
             position:'fixed', top:0, left:0, width:'100%', height:'100dvh', 
             background:'rgba(0,0,0,0.4)', zIndex:1000,
-            backdropFilter: 'blur(4px)', WebkitBackdropFilter: 'blur(4px)'
+            backdropFilter: 'blur(4px)', WebkitBackdropFilter: 'blur(4px)',
+            visibility: show ? 'visible' : 'hidden',
+            opacity: show ? 1 : 0,
+            transition: 'opacity 0.2s, visibility 0.2s'
         }}>
             <div className="mobile-menu-sidebar" onClick={e=>e.stopPropagation()} style={{
                 width:'80%', height:'100%', background:'white', padding:'20px', display:'flex', flexDirection:'column',
-                boxShadow:'2px 0 12px rgba(0,0,0,0.15)', animation: 'slideIn 0.3s ease-out'
+                boxShadow:'2px 0 12px rgba(0,0,0,0.15)',
+                transform: show ? 'translateX(0)' : 'translateX(-100%)',
+                transition: 'transform 0.3s ease-out'
             }}>
-                <style>{`
-                    @keyframes slideIn { from { transform: translateX(-100%); } to { transform: translateX(0); } }
-                `}</style>
                 <div style={{display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:20, paddingBottom:15, borderBottom:'1px solid #eee'}}>
                     <div>
                         <div style={{fontSize:18, fontWeight:'bold', color:'#1565c0'}}>{nickname || '관리자'}</div>
@@ -160,9 +166,7 @@ function MobileMenu({menus, onNavigate, onClose, activeView, nickname, userInfo}
     )
 }
 
-export default function MobileApp({nickname, userInfo: parentUserInfo, menus}){
-  const [logged, setLogged] = useState(!!(localStorage.getItem('token')))
-  const [userInfo, setUserInfo] = useState(parentUserInfo || JSON.parse(localStorage.getItem('userInfo') || 'null'))
+export default function MobileApp({nickname, userInfo, menus, onLogout}){
   const [menuOpen, setMenuOpen] = useState(false)
   
   // History State: Array of { id: string, params: object }
@@ -183,11 +187,8 @@ export default function MobileApp({nickname, userInfo: parentUserInfo, menus}){
       else setDetailData(data)
   }
 
-  if(!logged) return <Login onLogin={()=>setLogged(true)} />
-
   function performLogout(){
-      localStorage.removeItem('nickname')
-      setLogged(false)
+      if(onLogout) onLogout();
       setShowLogoutConfirm(false)
   }
 
@@ -232,6 +233,17 @@ export default function MobileApp({nickname, userInfo: parentUserInfo, menus}){
       'production': <div className="p-4"><h3>생산 관리</h3><p>목록...</p></div>,
       'orders': <div className="p-4"><h3>주문 목록</h3><p>목록...</p></div>,
       'sample': <MobileSample onNavigate={handleNavigate} onPopup={handlePopup} popupResult={popupResult} />,
+
+      // Menu ID Mappings (from data.sql)
+      '101': <MobileStock params={currentParams} onNavigate={handleNavigate} />,
+      '211': <MobileProductionSample />,
+      '311': <MobileInventorySample />,
+      '401': <MobileComponentSample />,
+      '406': <MobileComponentSample />,
+      '407': <MobileApiSample />,
+      '408': <MobileMultiApiSample />,
+      'G007': <MobileApiSample />,
+      'G008': <MobileMultiApiSample />,
   }
 
   return (
@@ -263,7 +275,7 @@ export default function MobileApp({nickname, userInfo: parentUserInfo, menus}){
             </button>
         </header>
 
-        {menuOpen && <MobileMenu menus={menus} onNavigate={(id)=>handleNavigate(id)} onClose={()=>setMenuOpen(false)} activeView={currentViewId} nickname={nickname} userInfo={userInfo} />}
+        <MobileMenu show={menuOpen} menus={menus} onNavigate={(id)=>handleNavigate(id)} onClose={()=>setMenuOpen(false)} activeView={currentViewId} nickname={nickname} userInfo={userInfo} />
 
         <div className="mobile-content" style={{flex:1, overflow:'auto'}}>
             {screens[currentViewId]}

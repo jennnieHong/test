@@ -77,8 +77,21 @@ public class MenuService {
      * DTO representing a node in the menu tree.
      */
     public static class MenuNode {
-        private Long id; private String name; private String code; private Integer level; private Long parentId; private List<MenuNode> children = new ArrayList<>();
-        public MenuNode(Menu m) { this.id=m.getId(); this.name=m.getName(); this.code=m.getCode(); this.level=m.getLevel(); this.parentId=m.getParentId(); }
-        public Long getId(){return id;} public String getName(){return name;} public String getCode(){return code;} public Integer getLevel(){return level;} public Long getParentId(){return parentId;} public List<MenuNode> getChildren(){return children;}
+        private Long id; private String name; private String code; private Integer level; private Long parentId; private String deviceType; private List<MenuNode> children = new ArrayList<>();
+        public MenuNode(Menu m) { 
+            this.id=m.getId(); 
+            this.name=m.getName(); 
+            this.code=m.getCode(); 
+            this.level=m.getLevel(); 
+            this.parentId=m.getParentId(); 
+            this.deviceType=m.getDeviceType();
+        }
+        public Long getId(){return id;} 
+        public String getName(){return name;} 
+        public String getCode(){return code;} 
+        public Integer getLevel(){return level;} 
+        public Long getParentId(){return parentId;} 
+        public String getDeviceType(){return deviceType;}
+        public List<MenuNode> getChildren(){return children;}
     }
 }
